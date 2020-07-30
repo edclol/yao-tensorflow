@@ -4,8 +4,11 @@ MAINTAINER edclol
 
 USER root
 
-RUN apt update && \
-        apt install -y git libsm6 libxext6 libxrender-dev libglib2.0-0 && \
+RUN chmod 777 /tmp && \
+        apt-key update && \
+        apt-get update --allow-unauthenticated && \
+        apt update && \
+        apt install -y git vim busybox libsm6 libxext6 libxrender-dev libglib2.0-0 && \
         rm -rf /var/lib/apt/lists/* && \
         pip3 install requests psutil py-cpuinfo pandas typing hdfs minio imutils opencv-python sklearn \
         -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
