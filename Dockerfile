@@ -5,15 +5,14 @@ MAINTAINER edclol
 USER root
 
 RUN chmod 777 /tmp && \
-        apt update --allow-unauthenticated && \
+        apt update && \
         apt install -y git && \
-        apt install -y vim && \
         apt install -y apt-file && \
         apt install -y busybox && \
-        apt install -y libsm6 libxext6 libxrender-dev libglib2.0-0 && \
-        rm -rf /var/lib/apt/lists/* && \
-        pip3 install requests psutil py-cpuinfo pandas typing hdfs minio imutils opencv-python sklearn \
-        -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+        apt install -y libsm6 libxext6 libxrender-dev libxrender1 libfontconfig1 && \
+        pip3 install requests psutil py-cpuinfo pandas typing hdfs minio numpy imutils opencv-python sklearn \
+        -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com && \
+        rm -rf /var/lib/apt/lists/*
 
 ADD bootstrap.sh /etc/bootstrap.sh
 ADD save.py /etc/save.py
