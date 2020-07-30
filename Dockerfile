@@ -9,7 +9,7 @@ RUN apt update && \
         apt install -y apt-file && \
         apt-file update && \
         rm -rf /var/lib/apt/lists/* && \
-        pip3 install requests psutil py-cpuinfo pandas typing hdfs minio imutils cv2 opencv-python sklearn \
+        pip3 install requests psutil py-cpuinfo pandas typing hdfs minio imutils opencv-python sklearn \
         -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 
 ADD bootstrap.sh /etc/bootstrap.sh
