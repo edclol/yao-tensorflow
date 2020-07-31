@@ -10,7 +10,7 @@ RUN chmod 777 /tmp && \
         apt install -y apt-file && \
         apt install -y busybox && \
         apt install -y libsm6 libxext6 libxrender-dev libxrender1 libfontconfig1 && \
-        pip3 install requests psutil py-cpuinfo pandas typing hdfs minio matplotlib numpy imutils opencv-python sklearn \
+        pip3 install requests psutil py-cpuinfo pandas typing hdfs pyhdfs minio matplotlib numpy imutils opencv-python sklearn \
         -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com && \
         rm -rf /var/lib/apt/lists/*
 
