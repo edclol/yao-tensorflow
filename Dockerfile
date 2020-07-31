@@ -6,6 +6,9 @@ USER root
 
 RUN chmod 777 /tmp && \
         apt update && \
+        echo "172.16.1.127  master" >> /etc/hosts && \
+        echo "172.16.1.200  work01" >> /etc/hosts && \
+        echo "172.16.1.179  work02" >> /etc/hosts && \
         apt install -y git && \
         apt install -y apt-file && \
         apt install -y busybox && \
