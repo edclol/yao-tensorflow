@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.2.0-gpu
+FROM tensorflow/tensorflow:1.9.0-gpu
 
 MAINTAINER edclol
 
