@@ -4,7 +4,7 @@ MAINTAINER edclol
 
 USER root
 
-RUN chmod 777 /tmp && \
+RUN chmod -R 777 /tmp && \
         apt update && \
         echo "172.16.1.127  master" >> /etc/hosts && \
         echo "172.16.1.200  work01" >> /etc/hosts && \
@@ -13,7 +13,7 @@ RUN chmod 777 /tmp && \
         apt install -y apt-file && \
         apt install -y busybox && \
         apt install -y libsm6 libxext6 libxrender-dev libxrender1 libfontconfig1 && \
-        pip3 install requests psutil py-cpuinfo pandas typing hdfs pyhdfs minio matplotlib numpy imutils opencv-python sklearn \
+        pip install requests psutil py-cpuinfo pandas typing hdfs pyhdfs minio matplotlib numpy imutils opencv-python sklearn \
         -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com && \
         rm -rf /var/lib/apt/lists/*
 
